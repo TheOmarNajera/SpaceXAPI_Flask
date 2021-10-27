@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import requests
 
 app = Flask(__name__)
-app.config.from_object('config.DevelopmentConfig')
+app.config.from_object('config.Config')
 
 URL = 'https://api.spacexdata.com/v4/rockets'
 
