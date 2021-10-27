@@ -4,11 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space X API</title>
+    <meta name="author" content="Edgar Omar Nájera Vázquez">
+    <meta name="copyright" content="Edgar Omar Nájera Vázquez">
+    <meta name="description" content="This is a simple App to consume an API. In this case, the API of Space X.">
+    <title>Space X API - Omar Nájera</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+    <link rel="Shortcut Icon" type="image/ico" href="https://www.spacex.com/static/images/favicon.ico">
 </head>
 <body>
-    {% for element in data %}
-        <p>{{element}}</p>
-    {% endfor %}
+    <main>
+        <h1>Rockets</h1>
+        <div class="wrapper">
+            <div class="gallery">
+                {% for element in data %}
+                    <div class="item">
+                        <h2>{{ element['name'] }}</h2>
+                        <p>{{ element['description'] }}</p>
+                        <div class="imgs">
+                            {% for img in element['flickr_images'] %}
+                                <img src="{{img}}">
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <address>
+            <p><b>API</b>: <a href="https://api.spacexdata.com/v4/rockets">https://api.spacexdata.com/v4/rockets</a></p>
+            <p>Autor: Edgar Omar Nájera Vázquez</p>
+            <p>Proyecto de Práctica</p>
+        </address>
+    </footer>
 </body>
 </html>
