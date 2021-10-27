@@ -1,4 +1,3 @@
-from typing import ClassVar
 class Config:
     DEBUG = False
 
