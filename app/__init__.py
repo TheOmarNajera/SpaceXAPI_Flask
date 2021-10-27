@@ -10,4 +10,4 @@ URL = 'https://api.spacexdata.com/v4/rockets'
 def index():
     data = requests.get(URL)
     data = data.json()
-    return render_template('index.html',data=data)
+    return render_template('index.html', data=data)
