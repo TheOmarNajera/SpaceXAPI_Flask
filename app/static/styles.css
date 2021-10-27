@@ -25,6 +25,11 @@ img {
     max-width: 100%;
 }
 
-h1 {
+h1, address {
     text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 0, 0);
 }
